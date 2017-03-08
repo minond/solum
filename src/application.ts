@@ -16,6 +16,7 @@ import * as session from 'express-session';
 export type Application = Express;
 export type Configuration = Configuration;
 
+// https://developer.mozilla.org/en-US/docs/Web/Manifest
 export interface Manifest {
     name: string;
     short_name: string;
@@ -23,7 +24,7 @@ export interface Manifest {
     start_url: string;
     background_color: string;
     theme_color: string;
-    display: 'standalone' | 'portrait';
+    display: 'standalone' | 'portrait' | 'fullscreen' | 'minimal-ui' | 'browser';
     icons: {
         str: string;
         sizes: string;
