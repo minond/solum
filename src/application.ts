@@ -37,18 +37,18 @@ export interface Manifest {
     }[];
 }
 
-export const configuration = (): Configuration => {
+export function configuration(): Configuration {
     dotenv.config({ silent: true });
     return config;
 };
 
-export const bootstrap = (config: Configuration = configuration()): Bootstrapped => {
+export function bootstrap(config: Configuration = configuration()): Bootstrapped {
     const app = application(config);
     app.listen(config('port'));
     return { app, config };
 };
 
-export const application = (config: Configuration): Application => {
+export function application(config: Configuration): Application {
     const app = express();
 
     const MANIFEST = config<Manifest>('app.manifest');

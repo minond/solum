@@ -9,17 +9,21 @@ var body = require("body-parser");
 var compression = require("compression");
 var cookie = require("cookie-parser");
 var session = require("express-session");
-exports.configuration = function () {
+function configuration() {
     dotenv.config({ silent: true });
     return config;
-};
-exports.bootstrap = function (config) {
-    if (config === void 0) { config = exports.configuration(); }
-    var app = exports.application(config);
+}
+exports.configuration = configuration;
+;
+function bootstrap(config) {
+    if (config === void 0) { config = configuration(); }
+    var app = application(config);
     app.listen(config('port'));
     return { app: app, config: config };
-};
-exports.application = function (config) {
+}
+exports.bootstrap = bootstrap;
+;
+function application(config) {
     var app = express();
     var MANIFEST = config('app.manifest');
     var VIEW_CACHE = config('app.server.view_cache');
@@ -68,4 +72,6 @@ exports.application = function (config) {
         }));
     }
     return app;
-};
+}
+exports.application = application;
+;

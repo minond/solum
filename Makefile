@@ -30,8 +30,6 @@ else
 endif
 
 build-server:
-	# --noUnusedParameters
-	# --noUnusedLocals
 	$(tsc) \
 		--pretty \
 		--module commonjs \
@@ -45,6 +43,7 @@ build-server:
 		--experimentalDecorators \
 		--forceConsistentCasingInFileNames \
 		--outDir $(dir_dist) \
+		--declaration \
 		$(dir_src)/declarations.d.ts \
 		$(dir_src)/application.ts
 
