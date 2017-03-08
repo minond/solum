@@ -40,6 +40,7 @@ build-server:
 		--moduleResolution node \
 		--noImplicitAny \
 		--noImplicitReturns \
+		--noImplicitThis \
 		--alwaysStrict \
 		--experimentalDecorators \
 		--forceConsistentCasingInFileNames \

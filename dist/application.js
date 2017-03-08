@@ -13,6 +13,12 @@ exports.configuration = function () {
     dotenv.config({ silent: true });
     return config;
 };
+exports.bootstrap = function (config) {
+    if (config === void 0) { config = exports.configuration(); }
+    var app = exports.application(config);
+    app.listen(config('port'));
+    return { app: app, config: config };
+};
 exports.application = function (config) {
     var app = express();
     var MANIFEST = config('app.manifest');

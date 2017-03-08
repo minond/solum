@@ -16,6 +16,11 @@ import * as session from 'express-session';
 export type Application = Express;
 export type Configuration = Configuration;
 
+export interface Bootstrapped {
+    app: Application;
+    config: Configuration;
+}
+
 // https://developer.mozilla.org/en-US/docs/Web/Manifest
 export interface Manifest {
     name: string;
@@ -35,6 +40,12 @@ export interface Manifest {
 export const configuration = (): Configuration => {
     dotenv.config({ silent: true });
     return config;
+};
+
+export const bootstrap = (config: Configuration = configuration()): Bootstrapped => {
+    const app = application(config);
+    app.listen(config('port'));
+    return { app, config };
 };
 
 export const application = (config: Configuration): Application => {
