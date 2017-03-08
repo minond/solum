@@ -63,5 +63,3 @@ exports.application = function (config) {
     }
     return app;
 };
-exports.app = exports.application(exports.configuration());
-exports.app.listen(config('port'));
