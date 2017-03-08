@@ -1,7 +1,7 @@
 /// <reference types="express" />
-import { Express, Request, Response, Router as BaseRouter } from 'express';
+import { Express, Request, Response, Router } from 'express';
 import { Configuration } from 'acm';
-export declare const Router: typeof BaseRouter;
+export declare const router: typeof Router;
 export declare type Request = Request;
 export declare type Response = Response;
 export declare type Application = Express;

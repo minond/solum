@@ -10,7 +10,7 @@ var body = require("body-parser");
 var compression = require("compression");
 var cookie = require("cookie-parser");
 var session = require("express-session");
-exports.Router = express_1.Router;
+exports.router = express_1.Router;
 function configuration() {
     dotenv.config({ silent: true });
     return config;
