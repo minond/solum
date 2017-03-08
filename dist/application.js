@@ -1,7 +1,8 @@
 "use strict";
+var express_1 = require("express");
 var express = require("express");
 var config = require("acm");
-var express_1 = require("express");
+var express_2 = require("express");
 var swig_1 = require("swig");
 var dotenv = require("dotenv");
 var favicon = require("serve-favicon");
@@ -9,6 +10,7 @@ var body = require("body-parser");
 var compression = require("compression");
 var cookie = require("cookie-parser");
 var session = require("express-session");
+exports.Router = express_1.Router;
 function configuration() {
     dotenv.config({ silent: true });
     return config;
@@ -47,15 +49,15 @@ function application(config) {
     app.get('/manifest.json', function (_req, res) {
         return res.json(MANIFEST);
     });
-    app.use('/robots.txt', express_1.static(ROBOTS_TXT ?
+    app.use('/robots.txt', express_2.static(ROBOTS_TXT ?
         'assets/resources/robots.txt' :
         'assets/resources/nobots.txt'));
     if (COMPRESSION) {
         app.use(compression());
     }
-    app.use('/assets', express_1.static('assets'));
-    app.use('/dist', express_1.static('dist'));
-    app.use('/node_modules', express_1.static('node_modules'));
+    app.use('/assets', express_2.static('assets'));
+    app.use('/dist', express_2.static('dist'));
+    app.use('/node_modules', express_2.static('node_modules'));
     if (BODY_PARSING) {
         app.use(body.json());
         app.use(body.urlencoded({ extended: true }));

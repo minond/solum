@@ -1,4 +1,4 @@
-import { Express } from 'express';
+import { Express, Request, Response, Router as BaseRouter } from 'express';
 import { Configuration } from 'acm';
 
 import * as express from 'express';
@@ -13,6 +13,10 @@ import * as compression from 'compression';
 import * as cookie from 'cookie-parser';
 import * as session from 'express-session';
 
+export const Router = BaseRouter;
+
+export type Request = Request;
+export type Response = Response;
 export type Application = Express;
 export type Configuration = Configuration;
 
