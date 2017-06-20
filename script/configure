@@ -1,0 +1,9 @@
+#!/bin/bash
+
+[ -f .env ] && source .env
+
+PORT=${PORT:-3000}
+
+echo "
+PORT=$PORT
+" > .env

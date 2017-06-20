@@ -1,5 +1,13 @@
-title: &title my app
-description: &description my app description goes here
+title: &title dear me
+description: &description The easiest way to journal ever. We send a few texts a day. You answer. We add your instagram photos. You have a journal.
+
+url: http://dearme.co
+survey_url: https://aryel1.typeform.com/to/uXF0sA
+
+worker:
+  scheduler:
+    range: 15 minutes
+    interval: 5 minutes
 
 social:
   image:
@@ -9,8 +17,8 @@ server:
   session: on
   body_parsing: on
   robots_txt: off
-  compression: off
-  view_cache: off
+  compression: on
+  view_cache: on
 
 manifest:
   name: *title
@@ -18,7 +26,7 @@ manifest:
   description: *description
   start_url: /?utm_source=homescreen
   background_color: "#000"
-  theme_color: "#27b8e8"
+  theme_color: "#000"
   display: standalone
   icons: []
     # - src:

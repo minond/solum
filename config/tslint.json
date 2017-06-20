@@ -10,7 +10,8 @@
         "no-trailing-whitespace": true,
         "no-unused-expression": true,
         "semicolon": [ true, "always" ],
-        "indent": [ true, "spaces" ],
-        "quotemark": [ true, "single", "avoid-escape" ]
+        "quotemark": [ true, "single", "avoid-escape" ],
+        "semicolon": [ true, "never"],
+        "indent": [ true, 2, { "SwitchCase": 1 } ]
     }
 }
