@@ -8,6 +8,6 @@ type Props = {}
 
 export class HiComponent extends Component<Props, State> {
   render() {
-    return <div className={css(common.text)}>hi</div>
+    return <div className={css(common.text)}>hello, world</div>
   }
 }

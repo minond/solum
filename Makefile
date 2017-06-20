@@ -8,7 +8,6 @@ pm2 = ./node_modules/.bin/pm2
 dir_src = src
 dir_dist = dist
 dir_conf = config
-dir_script = script
 
 opt_webpack_config = --config $(dir_conf)/webpack.js
 opt_tsc_config = @$(dir_conf)/tsconfig.txt
@@ -19,6 +18,9 @@ opt_tsc_server = --outDir $(dir_dist) \
 
 build: clean build-server build-client
 watch: watch-client watch-server
+
+configure:
+	./script/configure
 
 install:
 	@$(yarn) install
@@ -47,5 +49,5 @@ build-server:
 daemon:
 	$(pm2) start config/processes.yml
 
-pm:
+run:
 	$(pm2) start config/processes.yml --no-daemon
