@@ -132,7 +132,7 @@ export const HEADER_CSRF_TOKEN = 'X-Csrf-Token'
 export const TYPE_JSON = 'application/json'
 export const TYPE_PLAIN = 'plain/text'
 
-const get_csrf_token = (): string => {
+const getCsrfToken = (): string => {
   var match = document.cookie.match(/tototoken=(.+)/) || ['', '']
   return match[1].split('')[0]
 }
@@ -160,9 +160,9 @@ export const get = (url: string, conf: Request = {}): Promise<Response> => {
   return request(url, override)
 }
 
-export const post = (url: string, raw_body: object = {}, conf: Request = {}): Promise<Response> => {
+export const post = (url: string, rawBody: object = {}, conf: Request = {}): Promise<Response> => {
   let { headers = new Headers() } = conf
-  let body = JSON.stringify(raw_body)
+  let body = JSON.stringify(rawBody)
   let method = Method.POST
   let cache = Cache.NO_CACHE
   let credentials = Credentials.SAME_ORIGIN
@@ -172,7 +172,7 @@ export const post = (url: string, raw_body: object = {}, conf: Request = {}): Pr
 
   headers.set(HEADER_ACCEPT, TYPE_JSON)
   headers.set(HEADER_CONTENT_TYPE, TYPE_JSON)
-  headers.set(HEADER_CSRF_TOKEN, get_csrf_token())
+  headers.set(HEADER_CSRF_TOKEN, getCsrfToken())
 
   return request(url, override)
 }

@@ -1,17 +1,57 @@
 {
-    "rules": {
-        "curly": true,
-        "eofline": true,
-        "forin": true,
-        "no-any": false,
-        "no-duplicate-variable": true,
-        "no-eval": true,
-        "no-internal-module": true,
-        "no-trailing-whitespace": true,
-        "no-unused-expression": true,
-        "semicolon": [ true, "always" ],
-        "quotemark": [ true, "single", "avoid-escape" ],
-        "semicolon": [ true, "never"],
-        "indent": [ true, 2, { "SwitchCase": 1 } ]
-    }
+   "rules":{
+      "curly":true,
+      "eofline":true,
+      "forin":true,
+      "no-any":false,
+      "no-duplicate-variable":true,
+      "no-eval":true,
+      "no-internal-module":true,
+      "no-trailing-whitespace":true,
+      "no-unused-expression":true,
+      "semicolon":[
+         true,
+         "always"
+      ],
+      "quotemark":[
+         true,
+         "single",
+         "avoid-escape"
+      ],
+      "semicolon":[
+         true,
+         "never"
+      ],
+      "indent":[
+         true,
+         2,
+         {
+            "SwitchCase":1
+         }
+      ],
+      "variable-name":[
+         true,
+         "ban-keywords",
+         "check-format",
+         "allow-leading-underscore",
+         "allow-pascal-case"
+      ],
+      "typedef-whitespace":[
+         true,
+         {
+            "call-signature":"nospace",
+            "index-signature":"nospace",
+            "parameter":"nospace",
+            "property-declaration":"nospace",
+            "variable-declaration":"nospace"
+         },
+         {
+            "call-signature":"onespace",
+            "index-signature":"onespace",
+            "parameter":"onespace",
+            "property-declaration":"onespace",
+            "variable-declaration":"onespace"
+         }
+      ]
+   }
 }
