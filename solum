@@ -1,0 +1,8 @@
+#!/bin/bash
+
+base="$(dirname $0)"
+dir="$(pwd)"
+
+for file in assets config script src Makefile README.md package.json yarn.lock .gitignore; do
+  cp -r "$base/$file" "./$file"
+done
