@@ -6,7 +6,7 @@ import { common } from './styles'
 type State = {}
 type Props = {}
 
-export class HiComponent extends Component<Props, State> {
+export class AppComponent extends Component<Props, State> {
   render() {
     return <div className={css(common.text)}>hello, world</div>
   }

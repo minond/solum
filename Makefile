@@ -16,7 +16,7 @@ opt_tsc_server = --outDir $(dir_dist) \
 	$(dir_src)/declarations.d.ts \
 	$(dir_src)/server/main.ts
 
-build: clean build-server build-client
+build: clean server client
 watch: watch-client watch-server
 
 configure:
@@ -37,13 +37,13 @@ lint:
 watch-client:
 	$(webpack) $(opt_webpack_config) --watch
 
-build-client:
+client:
 	NODE_ENV=production $(webpack) $(opt_webpack_config)
 
 watch-server:
 	$(tsc) $(opt_tsc_config) $(opt_tsc_server) --watch
 
-build-server:
+server:
 	$(tsc) $(opt_tsc_config) $(opt_tsc_server)
 
 daemon:
