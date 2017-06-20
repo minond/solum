@@ -2,6 +2,7 @@ yarn = yarn
 node = node
 webpack = ./node_modules/.bin/webpack
 tslint = ./node_modules/.bin/tslint
+standard = ./node_modules/.bin/standard
 tsc = ./node_modules/.bin/tsc
 pm2 = ./node_modules/.bin/pm2
 
@@ -33,6 +34,7 @@ lint:
 		$(dir_src)/*.ts \
 		$(dir_src)/**/*.ts \
 		$(dir_src)/**/*.tsx
+	$(standard) $(dir_conf)/*.js
 
 watch-client:
 	$(webpack) $(opt_webpack_config) --watch
