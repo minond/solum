@@ -17,6 +17,17 @@ const SRC = DIR('src')
 const DIST = DIR('dist')
 const CONFIG = DIR('config')
 
+const RULE_REACT = {
+  test: /\.jsx?$/,
+  exclude: /node_modules/,
+  use: {
+    loader: 'babel-loader',
+    options: {
+      presets: ['es2015', 'react']
+    }
+  }
+}
+
 const RULE_TYPESCRIPT = {
   test: /\.tsx?$/,
   loader: 'awesome-typescript-loader',
@@ -64,6 +75,7 @@ module.exports = {
 
   module: {
     rules: [
+      RULE_REACT,
       RULE_TYPESCRIPT,
       RULE_SOURCE_MAP
     ]
